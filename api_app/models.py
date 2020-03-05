@@ -4,7 +4,7 @@ from django.db import models
 
 class Name(models.Model):
     """This class represents the loglist model."""
-    name = models.TextField(null=True, default="Not defined in message")
+    name = models.TextField()
 
     def __str__(self):
-        self.name;
+        return self.name
