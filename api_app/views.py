@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest, request
+from django.http import HttpResponse, HttpRequest, request, JsonResponse
 from .models import Name
 from django.views.decorators.csrf import csrf_exempt
 
@@ -11,6 +11,10 @@ def hello(request):
         # name_instance = Name()
         # name_instance.name = client_name
         # name_instance.save()
-        return HttpResponse('{meta:{status:200}data:{message: hello, '  + client_name + '}}')
+        mylist = {
+            'meta' : {'status' : 200},
+            'data' : {'message': 'hello, ' + client_name}
+        }
+        return JsonResponse(mylist)
     except:
         return HttpResponse("There is a problem with that input!")
