@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('hello', views.hello),
-    path('fibonacci' views.fibonacci),
+    path('fibonacci', views.fibonacci),
 ]

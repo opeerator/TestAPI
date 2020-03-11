@@ -3,7 +3,21 @@ from django.http import HttpResponse, HttpRequest, request, JsonResponse
 from .models import Name
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
+@csrf_exempt
+def F(n): 
+    a = 0
+    b = 1
+    place = 0
+    if n == 0:
+        return a
+    while b != n:
+        c = a + b 
+        a = b 
+        b = c
+        place += 1
+        
+    return place + 1
+
 @csrf_exempt
 def hello(request):
     try:
@@ -18,3 +32,17 @@ def hello(request):
         return JsonResponse(mylist)
     except:
         return HttpResponse("There is a problem with that input!")
+
+@csrf_exempt
+def fibonacci(request):
+    try:
+        number = request.GET['index']
+        finalfib = F(int(number))
+        mylist = {
+            'meta' : {'status' : 200},
+            'data' : {'fibNumber': finalfib}
+        }
+        return JsonResponse(mylist)
+    except:
+        return HttpResponse("There was a problem with calculating fibonnaci!")
+
