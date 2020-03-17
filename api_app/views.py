@@ -3,7 +3,15 @@ from django.http import HttpResponse, HttpRequest, request, JsonResponse
 from .models import Name
 from django.views.decorators.csrf import csrf_exempt
 
-@csrf_exempt
+def memoize(f):
+    fibs = {}
+    def helper(x):
+        if x not in fibs:
+            fibs[x] = f(x)
+        return fibs[x]
+    return helper
+
+@memoize
 def F(n): 
     a = 0
     b = 1
@@ -32,6 +40,7 @@ def hello(request):
         return JsonResponse(mylist)
     except:
         return HttpResponse("There is a problem with that input!")
+
 
 @csrf_exempt
 def fibonacci(request):
