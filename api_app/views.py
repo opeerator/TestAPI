@@ -12,19 +12,12 @@ def memoize(f):
     return helper
 
 @memoize
-def F(n): 
-    a = 0
-    b = 1
-    place = 0
-    if n == 0:
-        return a
-    while b != n:
-        c = a + b 
-        a = b 
-        b = c
-        place += 1
-        
-    return place + 1
+def F(n):     
+    if n < 1:    
+        return 0    
+    if n == 1:                                                               
+        return 1                                                             
+    return F(n-1) + F(n-2) 
 
 @csrf_exempt
 def hello(request):

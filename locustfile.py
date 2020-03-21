@@ -1,37 +1,37 @@
 from locust import HttpLocust, TaskSet, task, between
 
 def fibo_example_5(self):
-    self.client.get("/api/fibonacci?index=13")
+    self.client.get("/api/fibonacci?index=10")
 def fibo_example_6(self):
-    self.client.get("/api/fibonacci?index=21")
+    self.client.get("/api/fibonacci?index=15")
 def fibo_example_7(self):
-    self.client.get("/api/fibonacci?index=34")
+    self.client.get("/api/fibonacci?index=20")
 def fibo_example_8(self):
-    self.client.get("/api/fibonacci?index=55")
+    self.client.get("/api/fibonacci?index=25")
 def fibo_example_9(self):
-    self.client.get("/api/fibonacci?index=89")
+    self.client.get("/api/fibonacci?index=30")
 def fibo_example_10(self):
-    self.client.get("/api/fibonacci?index=144")
+    self.client.get("/api/fibonacci?index=35")
 def fibo_example_11(self):
-    self.client.get("/api/fibonacci?index=233")
+    self.client.get("/api/fibonacci?index=40")
 def fibo_example_12(self):
-    self.client.get("/api/fibonacci?index=377")
+    self.client.get("/api/fibonacci?index=45")
 def fibo_example_13(self):
-    self.client.get("/api/fibonacci?index=610")
+    self.client.get("/api/fibonacci?index=50")
 def fibo_example_14(self):
-    self.client.get("/api/fibonacci?index=987")
+    self.client.get("/api/fibonacci?index=22")
 def fibo_example_15(self):
-    self.client.get("/api/fibonacci?index=1597")
+    self.client.get("/api/fibonacci?index=27")
 def fibo_example_16(self):
-    self.client.get("/api/fibonacci?index=2584")
+    self.client.get("/api/fibonacci?index=39")
 def fibo_example_17(self):
-    self.client.get("/api/fibonacci?index=4181")
+    self.client.get("/api/fibonacci?index=18")
 def fibo_example_18(self):
-    self.client.get("/api/fibonacci?index=6765")
+    self.client.get("/api/fibonacci?index=19")
 def fibo_example_19(self):
-    self.client.get("/api/fibonacci?index=10946")
+    self.client.get("/api/fibonacci?index=47")
 def fibo_example_20(self):
-    self.client.get("/api/fibonacci?index=17711")
+    self.client.get("/api/fibonacci?index=32")
     
 
 class WebsiteTasks(TaskSet):
